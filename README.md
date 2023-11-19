@@ -93,3 +93,25 @@ De la misma manera se crea el model Task. Alto que noté es que se al
 crear el nombre de la tabla, esta adopta el nombre en plural, yo la
 nombre task, y el nombre de la tabla es tasks. 
 
+Se crea la realación de uno a muchos entre task y project. Un proyecto
+puede tener varias tareas, pero una tarea solo pertenece a un proyecto.
+
+Esto se lo realiza en el archivo Project.js
+
+    Project.hasMany(Task, {
+        foreignKey: 'projectId',
+        sourceKey: 'id'
+    })
+
+    Task.belongsTo(Project, {
+        foreignKey: 'projectId',
+        targetId: 'id'
+    })
+
+A diferencia de como he visto en otras configuraciones, no es
+necesario crear los campos de projectId, en los modelos, esto
+automáticamente los crea. Claro que con esto se obliga a trabajar
+en relaciones. A diferencia de crear los campos, se pueden trabajar
+de manera cruda (si se podría decir así).
+
+## CREATE/READ
