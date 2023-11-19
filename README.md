@@ -89,5 +89,7 @@ opción.
 
 En su documentación lo menciona. 
 
-
+De la misma manera se crea el model Task. Alto que noté es que se al
+crear el nombre de la tabla, esta adopta el nombre en plural, yo la
+nombre task, y el nombre de la tabla es tasks. 
 
